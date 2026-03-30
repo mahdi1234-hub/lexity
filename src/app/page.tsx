@@ -196,6 +196,97 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* TrintoSpec CTA Section */}
+      <section className="py-32 bg-[#2C2824] relative overflow-hidden">
+        {/* Subtle background grid pattern */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px'
+        }}></div>
+
+        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center relative z-10">
+          {/* Floating solar icon */}
+          <div className="flex justify-center mb-8">
+            <div className="relative">
+              <svg className="w-12 h-12 text-[#C48C56] animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2" />
+                <path d="M12 20v2" />
+                <path d="m4.93 4.93 1.41 1.41" />
+                <path d="m17.66 17.66 1.41 1.41" />
+                <path d="M2 12h2" />
+                <path d="M20 12h2" />
+                <path d="m6.34 17.66-1.41 1.41" />
+                <path d="m19.07 4.93-1.41 1.41" />
+              </svg>
+              <div className="sonar-ring text-[#C48C56]"></div>
+            </div>
+          </div>
+
+          <p
+            className="text-[#C48C56] text-xs uppercase tracking-[0.3em] mb-6 font-medium"
+            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+          >
+            Live Market Intelligence
+          </p>
+
+          <h2
+            className="text-4xl md:text-5xl lg:text-6xl text-[#F2EFEA] tracking-tight font-light mb-6 leading-tight"
+            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+          >
+            Explore Tunisian Solar
+            <br />
+            <span className="text-[#C48C56]">Market Data</span> in Real Time
+          </h2>
+
+          <p
+            className="text-[#F2EFEA]/60 text-lg max-w-2xl mx-auto mb-12 font-light leading-relaxed"
+            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+          >
+            Track solar panel prices, regional analytics, customer sentiment, and government policy updates 
+            across Tunisia - all streaming live with interactive Perspective.js visualizations.
+          </p>
+
+          {/* Feature pills */}
+          <div className="flex flex-wrap justify-center gap-3 mb-14">
+            {[
+              'Live Prices (TND)',
+              'Regional Data',
+              'News Feed',
+              'Sentiment Analysis',
+              'Policy Updates',
+              'D3FC Charts',
+            ].map((feature) => (
+              <span
+                key={feature}
+                className="px-4 py-1.5 rounded-full text-xs tracking-wide text-[#F2EFEA]/70 border border-[#F2EFEA]/10 bg-[#F2EFEA]/[0.03]"
+                style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+              >
+                {feature}
+              </span>
+            ))}
+          </div>
+
+          {/* Animated border CTA button */}
+          <a
+            href="https://github.com/mahdi1234-hub/trintospec"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cta-border-animation inline-flex items-center gap-3 px-10 py-5 rounded-2xl text-lg font-medium text-[#F2EFEA] bg-[#F2EFEA]/[0.04] backdrop-blur-sm transition-all duration-300 hover:bg-[#F2EFEA]/[0.08] hover:scale-[1.02] cursor-pointer group"
+            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+          >
+            <svg className="w-5 h-5 text-[#C48C56] transition-transform group-hover:rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+            </svg>
+            Launch TrintoSpec Dashboard
+            <svg className="w-4 h-4 opacity-50 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-[#2C2824] text-[#F2EFEA] py-8">
         <div className="max-w-6xl mx-auto px-6 text-center">

@@ -132,6 +132,89 @@
   animation: shimmer 2s ease-in-out infinite;
 }
 
+/* CTA Border Animation */
+@keyframes borderRotate {
+  0% { --border-angle: 0deg; }
+  100% { --border-angle: 360deg; }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.cta-border-animation {
+  position: relative;
+  isolation: isolate;
+}
+
+.cta-border-animation::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--border-angle, 0deg),
+    transparent 25%,
+    #C48C56 50%,
+    transparent 75%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: borderRotate 3s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.cta-border-animation::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 1rem;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--border-angle, 0deg),
+    transparent 30%,
+    rgba(196, 140, 86, 0.3) 50%,
+    transparent 70%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: borderRotate 3s linear infinite reverse;
+  filter: blur(6px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.cta-border-animation:hover::before {
+  background: conic-gradient(
+    from var(--border-angle, 0deg),
+    transparent 15%,
+    #C48C56 40%,
+    #F2EFEA 50%,
+    #C48C56 60%,
+    transparent 85%
+  );
+  animation-duration: 2s;
+}
+
+.cta-border-animation:hover::after {
+  background: conic-gradient(
+    from var(--border-angle, 0deg),
+    transparent 20%,
+    rgba(196, 140, 86, 0.5) 45%,
+    rgba(242, 239, 234, 0.3) 50%,
+    rgba(196, 140, 86, 0.5) 55%,
+    transparent 80%
+  );
+  animation-duration: 2s;
+  filter: blur(10px);
+}
+
 /* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 6px;
